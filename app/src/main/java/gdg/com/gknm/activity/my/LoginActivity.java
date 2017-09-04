@@ -1,7 +1,6 @@
 package gdg.com.gknm.activity.my;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.WindowManager;
 
 import gdg.com.gknm.R;
@@ -15,6 +14,6 @@ public class LoginActivity extends BaseAcivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
-        Log.d("LoginActivity", "slkdjflksjdlfkj");
+
     }
 }
