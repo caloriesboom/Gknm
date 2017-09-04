@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">鄂尔多斯</string>
+
+    <!--登录页面-->
+    <string name="hint_login_username">请输入您的用户名</string>
+    <string name="hint_login_password">请输入您的密码</string>
+    <string name="button_login">登 录</string>
+    <string name="check_login">记住密码</string>
+    <string name="button_setting">配 置</string>
+    <string name="title_login_setting">请输入服务器地址：</string>
+    <string name="hint_login_setting">如：192.168.3.208:8180</string>
+    <string name="button_ok">确 定</string>
+
+</resources>
