@@ -5,12 +5,20 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorPrimaryStyles</item>
     </style>
 
     <!--登录-->
     <style name="BaseEditText">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">120px</item>
+    </style>
+
+    <!--查看大图页面，全屏显示-->
+    <style name="ViewBigPicTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryDark">@color/blue</item>
+        <item name="colorAccent">@color/blue</item>
+        <item name="android:windowFullscreen">true</item>
     </style>
 </resources>

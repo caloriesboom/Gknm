@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@mipmap/bag_first"
+    android:orientation="vertical">
+<LinearLayout
+    android:layout_marginTop="@dimen/dimen_15dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:text="@string/activity_task_title"/>
+</LinearLayout>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/ep_first"
+    android:textSize="16sp"
+    android:layout_margin="@dimen/dimen_6dp"
+    android:textColor="@color/white"/>
+    <ListView
+        android:id="@+id/lv_task"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_300dp" />
+    <LinearLayout
+        android:id="@+id/ll_sign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/button_sign3"
+           />
+        <TextView
+            android:layout_marginTop="@dimen/dimen_2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="@string/button_sign"/>
+    </LinearLayout>
+</LinearLayout>

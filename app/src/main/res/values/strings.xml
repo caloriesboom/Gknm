@@ -11,4 +11,14 @@
     <string name="hint_login_setting">如：192.168.3.208:8180</string>
     <string name="button_ok">确 定</string>
 
+    <!--TAB标签-->
+    <string name="navigation_home">首页</string>
+    <string name="navigation_work">工作</string>
+    <string name="navigation_me">我的</string>
+
+    <!--首页-->
+<string name="activity_task_title">任务提醒</string>
+<string name="button_sign">标记报警</string>
+<string name="ep_first">1.您有一条任务需要在2017年5月13日之前处理，请及时查看！</string>
+
 </resources>

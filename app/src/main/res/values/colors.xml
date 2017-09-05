@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorPrimaryStyles">#3ae2ab</color>
+    <!--<color name="colorPrimaryStyles">#3991FB</color>-->
 
 
     <color name="custom_blue">#0f82fe</color>
@@ -94,7 +95,7 @@
 
     <color name="transparent">#00000000</color>
     <color name="colorPrimaryStyles2">#139369</color>
-
+    <color name="time_line_bg">#b3b3b3</color>
 
 
     <color name="primary">#FF0000</color>
@@ -102,4 +103,7 @@
     <color name="ripple">#F06292</color>
     <color name="accent">#E91E63</color>
     <color name="accent_pressed">#C2185B</color>
+
+    <color name="view_grid_line">#dfdfdf</color>
+    <color name="fragment_text_color">#1c1c1c</color>
 </resources>

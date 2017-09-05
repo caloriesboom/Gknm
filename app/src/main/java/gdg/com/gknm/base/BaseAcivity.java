@@ -2,8 +2,8 @@ package gdg.com.gknm.base;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -16,10 +16,10 @@ import gdg.com.gknm.utils.SystemBarTintManager;
  * Activity基类
  */
 
-public class BaseAcivity extends AppCompatActivity {
+public abstract class BaseAcivity extends AppCompatActivity {
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         //添加Activity到堆栈
         ActivityManager.getInstance().pushActivity(this);
         // 设置通知栏颜色
