@@ -17,8 +17,28 @@
     <string name="navigation_me">我的</string>
 
     <!--首页-->
-<string name="activity_task_title">任务提醒</string>
-<string name="button_sign">标记报警</string>
-<string name="ep_first">1.您有一条任务需要在2017年5月13日之前处理，请及时查看！</string>
-
+    <string name="activity_task_title">任务提醒</string>
+    <string name="button_sign">标记报警</string>
+    <string name="ep_first">1.您有一条任务需要在2017年5月13日之前处理，请及时查看！</string>
+    <!--标记报警-->
+    <string name="activity_sign_title">标记报警</string>
+    <!--监控报警-->
+    <string name="activity_monitor_title">监控报警</string>
+    <!--监督检查-->
+    <string name="activity_supervision_title">监督检查</string>
+    <string name="activity_supervision_subtitle">待办任务</string>
+    <string name="text_supervision_header_task">任务名称</string>
+    <string name="text_supervision_header_poll">企业名称</string>
+    <string name="text_supervision_header_time">截止时间</string>
+    <string name="text_supervision_header_handle">操作</string>
+    <!--监督检查——企业信息-->
+    <string name="activity_supervision_poll_title">企业信息</string>
+    <!--监督检查——现场检查结果记录-->
+    <string name="activity_supervision_local_check">现场检查结果记录</string>
+    <!--监督检查——签字确认-->
+    <string name="activity_supervision_sign_confirm">签字确认</string>
+    <!--现场检查监督指导-->
+    <string name="activity_local_supervision_title">现场检查监督指导</string>
+    <!--历史问题查看-->
+    <string name="activity_history_title">历史问题查看</string>
 </resources>

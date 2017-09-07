@@ -3,8 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="colorPrimaryStyles">#3ae2ab</color>
-    <!--<color name="colorPrimaryStyles">#3991FB</color>-->
+    <!--<color name="colorPrimaryStyles">#3ae2ab</color>-->
+    <color name="colorPrimaryStyles">#3991FB</color>
 
 
     <color name="custom_blue">#0f82fe</color>
@@ -106,4 +106,15 @@
 
     <color name="view_grid_line">#dfdfdf</color>
     <color name="fragment_text_color">#1c1c1c</color>
+    <color name="more_gray">#AAAAAA</color>
+    <!--加载loading-->
+    <color name="red_light">#ffff4444</color>
+    <color name="green_light">#ff99cc00</color>
+    <color name="blue_light">#ff33b5e5</color>
+    <color name="orange_light">#ffffbb33</color>
+    <color name="color_accent">#ff80bd01</color>
+    <color name="color_green">#3bb300</color>
+    <color name="pink_light">#e6fff3f0</color>
+
+
 </resources>

@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import butterknife.ButterKnife;
+import gdg.com.gknm.utils.LogUtil;
+import rx.Subscription;
 
 /**
  * Created by GUO.DG on 2017-8-23.
@@ -19,6 +21,7 @@ public abstract class baseFragment extends Fragment {
     protected Activity mActivity;
     protected LayoutInflater mLayoutInflater;
     private View mRootView;
+    protected Subscription mSubscription;
 
     @Override
     public void onAttach(Activity activity) {
@@ -119,13 +122,13 @@ public abstract class baseFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.unbind(this);
-     //   cancelSubscription(mSubscription);
+        cancelSubscription(mSubscription);
     }
 
-//    public static void cancelSubscription(Subscription subscription) {
-//        if (subscription != null && !subscription.isUnsubscribed()) {
-//            subscription.unsubscribe();
-//            LogUtil.d("网络请求取消");
-//        }
-//    }
+    public static void cancelSubscription(Subscription subscription) {
+        if (subscription != null && !subscription.isUnsubscribed()) {
+            subscription.unsubscribe();
+            LogUtil.d("网络请求取消");
+        }
+    }
 }

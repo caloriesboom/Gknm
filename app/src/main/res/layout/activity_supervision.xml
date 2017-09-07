@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_monitor_alarm"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <gdg.com.gknm.weight.CustomActionBar
+        android:id="@+id/custom_action_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:left_image="@mipmap/back"
+        app:middle_text="@string/activity_supervision_title"
+        app:right_image="@mipmap/search_icon"/>
+    <LinearLayout
+        android:layout_marginTop="@dimen/dimen_1dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50dp"
+        android:gravity="center_horizontal"
+        android:background="@color/view_grid_line">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:text="@string/activity_supervision_subtitle"/>
+    </LinearLayout>
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:shrinkColumns="*"
+        android:stretchColumns="*">
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:paddingTop="2dp"
+            android:gravity="center"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:id="@+id/btn_abnormal_sourcename"
+                style="@style/HeaderText"
+                android:layout_marginRight="@dimen/dimen_1dp"
+                android:layout_marginEnd="@dimen/dimen_1dp"
+                android:layout_weight="1.2"
+                android:text="@string/text_supervision_header_task"
+                />
+
+            <TextView
+                android:id="@+id/btn_abnormal_pointname"
+                style="@style/HeaderText"
+                android:layout_marginRight="@dimen/dimen_1dp"
+                android:layout_marginEnd="@dimen/dimen_1dp"
+                android:layout_weight="1"
+                android:text="@string/text_supervision_header_poll"
+               />
+
+            <TextView
+                android:id="@+id/btn_abnormal_time"
+                style="@style/HeaderText"
+                android:layout_marginRight="@dimen/dimen_1dp"
+                android:layout_marginEnd="@dimen/dimen_1dp"
+                android:layout_weight="1"
+                android:text="@string/text_supervision_header_time"
+                />
+
+            <TextView
+                android:id="@+id/btn_abnormal_num"
+                style="@style/HeaderText"
+                android:layout_weight="0.8"
+                android:layout_marginRight="@dimen/dimen_1dp"
+                android:layout_marginEnd="@dimen/dimen_1dp"
+                android:text="@string/text_supervision_header_handle"
+                />
+        </TableRow>
+    </TableLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/null_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@mipmap/null_image"
+            android:gravity="center"
+            android:visibility="gone" />
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <gdg.com.gknm.weight.CustomListView
+                android:id="@+id/list_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:cacheColorHint="@android:color/transparent"
+                android:divider="@android:color/transparent"
+                android:listSelector="@android:color/transparent"
+                android:scrollbars="none" />
+
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </FrameLayout>
+</LinearLayout>

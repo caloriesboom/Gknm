@@ -14,6 +14,7 @@ import gdg.com.gknm.R;
 
 /**
  * Created by GUO.DG on 2017-9-5.
+ *
  */
 
 public class WorkAdapter extends BaseAdapter {
@@ -24,40 +25,22 @@ public class WorkAdapter extends BaseAdapter {
     private List<String> mList ;
 
     private List<Integer> nList = new ArrayList<>();
-    private List<String> nameList = new ArrayList<>();
-    String[] name = new String[]{"企业信息","实时工况","超标报表","异常报警"};
-    public WorkAdapter(Context context, List<String> mList) {
-        this.mList =mList;
-
+    String[] name = new String[]{"监控报警","监督检查","历史问题查看","现场检查监督指导"};
+    public WorkAdapter(Context context) {
         this.context = context;
         initIcon();
     }
 
     private void initIcon() {
-        for (int i = 0; i < mList.size(); i++) {
-            if (mList.get(i).equals("gn_0001")) {
                 nList.add(R.mipmap.jiankongbaojing);
-            } else if (mList.get(i).equals("gn_0002")) {
                 nList.add(R.mipmap.jiandujiancha);
-            } else if (mList.get(i).equals("gn_0003")) {
                 nList.add(R.mipmap.lishiwentichakan);
-            } else if (mList.get(i).equals("gn_0004")) {
                 nList.add(R.mipmap.xianchangjiancha);
-            }
-// else if (mList.get(i).equals("gn_0005")) {
-//                nList.add(R.drawable.zhongyaoyichangbaojing_1);
-//            } else if (mList.get(i).equals("gn_0006")) {
-//                nList.add(R.drawable.gongkuangchaxun_1);
-//            }
-
-        }
-
     }
 
     @Override
     public int getCount() {
-        return mList.size();
-        //  return icons.length;
+        return nList.size();
     }
 
     @Override
@@ -76,7 +59,6 @@ public class WorkAdapter extends BaseAdapter {
         TextView iv_name = (TextView) view.findViewById(R.id.iv_home_item_name);
         ImageView iv_icon = (ImageView) view.findViewById(R.id.iv_home_item_icon);
 
-        //iv_icon.setImageResource(icons[position]);
         iv_name.setText(name[position]);
         iv_icon.setImageResource(nList.get(position));
 

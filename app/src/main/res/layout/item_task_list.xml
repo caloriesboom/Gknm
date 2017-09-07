@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="1dp"
+    android:paddingRight="1dp">
+
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:shrinkColumns="*"
+        android:stretchColumns="*"
+        tools:ignore="UselessParent">
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:paddingTop="2dp"
+            android:gravity="center"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:id="@+id/task_name"
+                style="@style/ItemText"
+                android:layout_marginRight="@dimen/dimen_1dp"
+                android:layout_marginEnd="@dimen/dimen_1dp"
+                android:layout_weight="1.2"
+                android:text="@string/text_supervision_header_task"
+                />
+
+            <TextView
+                android:id="@+id/poll_name"
+                style="@style/ItemText"
+                android:layout_marginRight="@dimen/dimen_1dp"
+                android:layout_marginEnd="@dimen/dimen_1dp"
+                android:layout_weight="1"
+                android:text="@string/text_supervision_header_poll"
+                />
+
+            <TextView
+                android:id="@+id/last_time"
+                style="@style/ItemText"
+                android:layout_marginRight="@dimen/dimen_1dp"
+                android:layout_marginEnd="@dimen/dimen_1dp"
+                android:layout_weight="1"
+                android:text="@string/text_supervision_header_time"
+                />
+
+            <TextView
+                android:id="@+id/handle"
+                style="@style/ItemText"
+                android:layout_weight="0.8"
+                android:layout_marginRight="@dimen/dimen_1dp"
+                android:layout_marginEnd="@dimen/dimen_1dp"
+                android:text="@string/text_supervision_header_handle"
+                />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

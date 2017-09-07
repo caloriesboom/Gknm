@@ -1,4 +1,4 @@
-package gdg.com.gknm.activity.fragment;
+package gdg.com.gknm.fragment;
 
 import gdg.com.gknm.R;
 import gdg.com.gknm.base.baseFragment;

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_monitor_alarm"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <gdg.com.gknm.weight.CustomActionBar
+        android:id="@+id/custom_action_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:left_image="@mipmap/back"
+        app:middle_text="@string/activity_supervision_title"
+        app:right_image="@mipmap/search_icon"/>
+    <LinearLayout
+        android:layout_marginTop="@dimen/dimen_1dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50dp"
+        android:gravity="center_horizontal"
+        android:background="@color/view_grid_line">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:text="@string/activity_supervision_poll_title"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="7">
+        <TextView
+            style="@style/TextPollInfo"
+            android:text="企业名称:" />
+
+        <gdg.com.gknm.weight.CustomEditText
+            android:id="@+id/poll_name"
+            style="@style/EditTextPollInfo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="7">
+        <TextView
+            style="@style/TextPollInfo"
+            android:text="企业类别:" />
+        <RelativeLayout style="@style/RelationLayoutPollInfo">
+            <Spinner
+                android:id="@+id/sp_poll_category"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_40dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="7">
+        <TextView
+            style="@style/TextPollInfo"
+            android:text="行业类别:" />
+        <RelativeLayout style="@style/RelationLayoutPollInfo">
+            <Spinner
+                android:id="@+id/sp_industry_category"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_40dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="7">
+        <TextView
+            style="@style/TextPollInfo"
+            android:text="企业法人:" />
+
+        <gdg.com.gknm.weight.CustomEditText
+            android:id="@+id/corporate_name"
+            style="@style/EditTextPollInfo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="7">
+        <TextView
+            style="@style/TextPollInfo"
+            android:text="环保专工:" />
+
+        <gdg.com.gknm.weight.CustomEditText
+            android:id="@+id/environment_person"
+            style="@style/EditTextPollInfo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="7">
+        <TextView
+            style="@style/TextPollInfo"
+            android:text="联系电话:" />
+
+        <gdg.com.gknm.weight.CustomEditText
+            android:id="@+id/tel_number"
+            style="@style/EditTextPollInfo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="7">
+        <TextView
+            style="@style/TextPollInfo"
+            android:text="地址:" />
+
+        <gdg.com.gknm.weight.CustomEditText
+            android:id="@+id/address"
+            style="@style/EditTextPollInfo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="7">
+        <TextView
+            style="@style/TextPollInfo"
+            android:text="企业基本情况:" />
+
+        <gdg.com.gknm.weight.CustomEditText
+            android:id="@+id/poll_info"
+            style="@style/EditTextPollInfo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="7">
+        <TextView
+            style="@style/TextPollInfo"
+            android:text="治污工艺:" />
+
+        <gdg.com.gknm.weight.CustomEditText
+            android:id="@+id/pollution_control"
+            style="@style/EditTextPollInfo" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/toLocal"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_40dp"
+        android:layout_gravity="end|bottom"
+        android:text="现场检查结果记录"/>
+</LinearLayout>

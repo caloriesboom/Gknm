@@ -13,12 +13,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import gdg.com.gknm.activity.fragment.FirstFragment;
-import gdg.com.gknm.activity.fragment.MeFragment;
-import gdg.com.gknm.activity.fragment.WorkFragment;
-import gdg.com.gknm.base.BaseAcivity;
+import gdg.com.gknm.fragment.FirstFragment;
+import gdg.com.gknm.fragment.MeFragment;
+import gdg.com.gknm.fragment.WorkFragment;
+import gdg.com.gknm.base.BaseActivity;
 
-public class HomeActivity extends BaseAcivity {
+public class HomeActivity extends BaseActivity {
     public static final String HOME = "HOME";
     public static final String WORK = "WORK";
     public static final String ME = "ME";
