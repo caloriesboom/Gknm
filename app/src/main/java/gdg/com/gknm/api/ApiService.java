@@ -1,6 +1,9 @@
 package gdg.com.gknm.api;
 
+import gdg.com.gknm.bean.IndustryTypeBean;
 import gdg.com.gknm.bean.PollInfoBean;
+import gdg.com.gknm.bean.PollTypeBean;
+import gdg.com.gknm.bean.PollutionControlBean;
 import gdg.com.gknm.bean.TaskListBean;
 import gdg.com.gknm.bean.TestBean;
 import retrofit2.http.GET;
@@ -32,7 +35,24 @@ public interface ApiService {
     Observable<PollInfoBean> getPollInfo(
             @Query("pollSourceId") String pollSourceId
     );
+    //监督检查——企业类别：
+    // http://192.168.3.223:8080/edds/phoneHandleController/findPollType.do
+    @GET("/edds/phoneHandleController/findPollType.do")
+    Observable<PollTypeBean> getPollTpye(
 
+    );
+    //监督检查——行业类型：
+    // http://192.168.3.223:8080/edds/phoneHandleController/findIndustryType.do
+    @GET("/edds/phoneHandleController/findIndustryType.do")
+    Observable<IndustryTypeBean> getIndustryType(
+    );
+
+    //监督检查——治污工艺：
+    // http://192.168.3.223:8080/edds/phoneHandleController/getFacilityByPollId.do?start=0&limit=10&pollSourceId=150500000053&userId=10044
+    @GET("/edds/phoneHandleController/getFacilityByPollId.do")
+    Observable<PollutionControlBean> getPollutionControlList(
+            @Query("pollSourceId") String pollSourceId
+    );
     //测试：
     // http://60.31.186.26:8082/tlgk/appLoginAction!appLogin.action?userName=mg&passWord=123
     @GET("tlgk/appLoginAction!appLogin.action")

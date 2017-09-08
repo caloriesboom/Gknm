@@ -37,6 +37,15 @@
     <string name="activity_supervision_local_check">现场检查结果记录</string>
     <!--监督检查——签字确认-->
     <string name="activity_supervision_sign_confirm">签字确认</string>
+    <!--监督检查——治污工艺-->
+    <string name="activity_pollution_control">治污工艺详情</string>
+    <!--监督检查——治污工艺-表头-->
+    <string name="text_pollution_facility">设施名称</string>
+    <string name="text_pollution_creat_time">建设日期</string>
+    <string name="text_pollution_opr_time">投运日期</string>
+    <string name="text_pollution_handle">处理工艺</string>
+    <string name="text_pollution_design">设计处理能力</string>
+    <string name="text_pollution_run">运行情况</string>
     <!--现场检查监督指导-->
     <string name="activity_local_supervision_title">现场检查监督指导</string>
     <!--历史问题查看-->

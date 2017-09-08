@@ -5,7 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <!--<color name="colorPrimaryStyles">#3ae2ab</color>-->
     <color name="colorPrimaryStyles">#3991FB</color>
-
+    <color name="TitleIndicator">#e29d3a</color>
 
     <color name="custom_blue">#0f82fe</color>
     <color name="white">#ffffff</color>
@@ -116,5 +116,6 @@
     <color name="color_green">#3bb300</color>
     <color name="pink_light">#e6fff3f0</color>
 
-
+    <color name="local_excle_color">#e1e1e1</color>
+    <color name="local_excle_text_color">#ececec</color>
 </resources>

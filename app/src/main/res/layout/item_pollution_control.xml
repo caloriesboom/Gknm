@@ -27,41 +27,58 @@
             tools:ignore="UselessParent">
 
             <TextView
-                android:id="@+id/task_name"
-                style="@style/ItemText"
-                android:layout_marginRight="@dimen/dimen_1dp"
-                android:layout_marginEnd="@dimen/dimen_1dp"
-                android:layout_weight="1.2"
-                android:text="@string/text_supervision_header_task"
-                />
-
-            <TextView
-                android:id="@+id/poll_name"
+                android:id="@+id/facility_name"
                 style="@style/ItemText"
                 android:layout_marginRight="@dimen/dimen_1dp"
                 android:layout_marginEnd="@dimen/dimen_1dp"
                 android:layout_weight="1"
-                android:text="@string/text_supervision_header_poll"
+                android:text="1号电除尘器"
                 />
 
             <TextView
-                android:id="@+id/last_time"
+                android:id="@+id/creat_time"
                 style="@style/ItemText"
                 android:layout_marginRight="@dimen/dimen_1dp"
                 android:layout_marginEnd="@dimen/dimen_1dp"
                 android:layout_weight="1"
-                android:text="@string/text_supervision_header_time"
+                android:text="2006-09-12"
+                />
+
+            <TextView
+                android:id="@+id/opr_time"
+                style="@style/ItemText"
+                android:layout_marginRight="@dimen/dimen_1dp"
+                android:layout_marginEnd="@dimen/dimen_1dp"
+                android:layout_weight="1"
+                android:text="2006-09-12"
                 />
 
             <TextView
                 android:id="@+id/handle"
                 style="@style/ItemText"
-                android:layout_weight="0.8"
+                android:layout_weight="1"
                 android:padding="@dimen/dimen_3dp"
                 android:layout_marginRight="@dimen/dimen_1dp"
                 android:layout_marginEnd="@dimen/dimen_1dp"
-                android:textColor="@color/colorPrimaryStyles"
-                android:text="@string/text_supervision_header_handle"
+                android:text="双室五电场静电除尘"
+                />
+            <TextView
+                android:id="@+id/design"
+                style="@style/ItemText"
+                android:layout_weight="1"
+                android:padding="@dimen/dimen_3dp"
+                android:layout_marginRight="@dimen/dimen_1dp"
+                android:layout_marginEnd="@dimen/dimen_1dp"
+                android:text="2403210m³/h"
+                />
+            <TextView
+                android:id="@+id/run"
+                style="@style/ItemText"
+                android:layout_weight="0.5"
+                android:padding="@dimen/dimen_3dp"
+                android:layout_marginRight="@dimen/dimen_1dp"
+                android:layout_marginEnd="@dimen/dimen_1dp"
+                android:text="正常"
                 />
         </TableRow>
     </TableLayout>

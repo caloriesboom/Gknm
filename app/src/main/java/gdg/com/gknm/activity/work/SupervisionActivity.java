@@ -4,12 +4,14 @@ import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import gdg.com.gknm.R;
 import gdg.com.gknm.adapter.TaskAdapter;
 import gdg.com.gknm.api.ApiService;
@@ -33,6 +35,8 @@ public class SupervisionActivity extends BaseActivity implements SwipeRefreshLay
     CustomListView listView;
     @Bind(R.id.refresh_layout)
     SwipeRefreshLayout refreshLayout;
+    @Bind(R.id.test)
+    TextView test;
     private Subscription mSubscription;
     private String TAG = "SupervisionActivity";
     private TaskAdapter taskAdapter;
@@ -67,14 +71,14 @@ public class SupervisionActivity extends BaseActivity implements SwipeRefreshLay
 
     private void initTaskData() {
         refreshLayout.setRefreshing(true);
-        mSubscription = RetorfitManager.getInstance().createReq(ApiService.class).getTaskList("10044", "0","10")
+        mSubscription = RetorfitManager.getInstance().createReq(ApiService.class).getTaskList("10044", "0", "10")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new BaseObserver<TaskListBean>(this) {
                     @Override
                     protected void onSucceed(TaskListBean result) {
                         mList = result.getResultEntity().getData();
-                        taskAdapter = new TaskAdapter(SupervisionActivity.this,mList,R.layout.item_task_list);
+                        taskAdapter = new TaskAdapter(SupervisionActivity.this, mList, R.layout.item_task_list);
                         listView.setAdapter(taskAdapter);
                         refreshLayout.setRefreshing(false);
                     }
@@ -82,7 +86,7 @@ public class SupervisionActivity extends BaseActivity implements SwipeRefreshLay
                     @Override
                     protected void onFailed(String msg) {
                         super.onFailed(msg);
-                        LogUtil.d(TAG,msg);
+                        LogUtil.d(TAG, msg);
                         refreshLayout.setRefreshing(false);
                     }
                 });
@@ -91,8 +95,13 @@ public class SupervisionActivity extends BaseActivity implements SwipeRefreshLay
     private AdapterView.OnItemClickListener onItemClickListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-            StartActivityUtils.startActivityNone(SupervisionActivity.this,PollInfoActivity.class);
+            // TODO: 2017-9-8 弹出任务详情dialog
+            //StartActivityUtils.startActivityNone(SupervisionActivity.this, PollInfoActivity.class);
         }
     };
 
+    @OnClick(R.id.test)
+    public void onViewClicked() {
+        StartActivityUtils.startActivityNone(SupervisionActivity.this, PollInfoActivity.class);
+    }
 }

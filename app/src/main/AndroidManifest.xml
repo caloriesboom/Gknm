@@ -42,15 +42,35 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".activity.work.MonitorAlarmActivity" />
-        <activity android:name=".activity.work.SupervisionActivity" />
-        <activity android:name=".activity.work.HistoryActivity" />
-        <activity android:name=".activity.work.LocaleInspectActivity" />
-        <activity android:name=".activity.home.SignActivity" />
-        <activity android:name=".activity.work.PollInfoActivity" />
-        <activity android:name=".activity.work.ResultCheckActivity" />
-        <activity android:name=".activity.work.SignConfirmActivity"></activity>
+        <activity
+            android:name=".HomeActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".activity.work.MonitorAlarmActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".activity.work.SupervisionActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".activity.work.HistoryActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".activity.work.LocaleInspectActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".activity.home.SignActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".activity.work.PollInfoActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".activity.work.ResultCheckActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".activity.work.SignConfirmActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity android:name=".activity.work.PollutionControlActivity"></activity>
     </application>
 
 </manifest>

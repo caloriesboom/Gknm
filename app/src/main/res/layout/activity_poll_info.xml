@@ -14,6 +14,15 @@
         app:left_image="@mipmap/back"
         app:middle_text="@string/activity_supervision_title"
         app:right_image="@mipmap/search_icon"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <LinearLayout
         android:layout_marginTop="@dimen/dimen_1dp"
         android:layout_width="match_parent"
@@ -141,6 +150,8 @@
 
         <gdg.com.gknm.weight.CustomEditText
             android:id="@+id/poll_info"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/dimen_40dp"
             style="@style/EditTextPollInfo" />
     </LinearLayout>
 
@@ -163,4 +174,6 @@
         android:layout_height="@dimen/dimen_40dp"
         android:layout_gravity="end|bottom"
         android:text="现场检查结果记录"/>
+    </LinearLayout>
+    </ScrollView>
 </LinearLayout>
