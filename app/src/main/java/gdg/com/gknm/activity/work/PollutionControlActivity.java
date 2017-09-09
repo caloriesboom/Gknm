@@ -2,7 +2,6 @@ package gdg.com.gknm.activity.work;
 
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +48,6 @@ public class PollutionControlActivity extends BaseActivity implements SwipeRefre
     }
     private void initActionBar() {
         mActionBar.setLeftImageClickListener(this);
-        mActionBar.getRightImageView().setVisibility(View.VISIBLE);
     }
 
     @Override

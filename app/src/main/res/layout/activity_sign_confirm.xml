@@ -35,6 +35,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
+    android:layout_marginBottom="@dimen/dimen_5dp"
     android:layout_alignParentBottom="true"
     android:weightSum="2">
 
@@ -42,16 +43,22 @@
         <Button
             android:id="@+id/btn_save"
             android:layout_width="@dimen/dimen_0dp"
+            android:background="@drawable/btn_blue_selector"
+            android:textColor="@color/white"
             android:layout_weight="1"
-            android:layout_height="@dimen/dimen_40dp"
-
+            android:layout_height="@dimen/dimen_35dp"
+            android:layout_marginLeft="@dimen/dimen_10dp"
+            android:layout_marginRight="@dimen/dimen_5dp"
             android:text="暂存"/>
         <Button
             android:id="@+id/btn_confirm"
             android:layout_width="@dimen/dimen_0dp"
             android:layout_weight="1"
-            android:layout_height="@dimen/dimen_40dp"
-
+            android:background="@drawable/btn_blue_selector"
+            android:textColor="@color/white"
+            android:layout_height="@dimen/dimen_35dp"
+            android:layout_marginLeft="@dimen/dimen_5dp"
+            android:layout_marginRight="@dimen/dimen_10dp"
             android:text="提交"/>
 </LinearLayout>
     </RelativeLayout>

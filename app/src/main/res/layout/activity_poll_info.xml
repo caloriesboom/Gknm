@@ -166,13 +166,20 @@
 
         <gdg.com.gknm.weight.CustomEditText
             android:id="@+id/pollution_control"
-            style="@style/EditTextPollInfo" />
+            style="@style/EditTextPollInfo"
+            android:text="点击查看详情"
+            android:textColor="@color/colorPrimaryStyles"/>
     </LinearLayout>
+
     <Button
         android:id="@+id/toLocal"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/dimen_40dp"
+        android:layout_marginBottom="@dimen/dimen_5dp"
+        android:layout_height="@dimen/dimen_35dp"
         android:layout_gravity="end|bottom"
+        android:background="@drawable/btn_blue_selector"
+        android:padding="@dimen/dimen_5dp"
+        android:textColor="@color/white"
         android:text="现场检查结果记录"/>
     </LinearLayout>
     </ScrollView>

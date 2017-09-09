@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@mipmap/bag_first"
+    android:background="@mipmap/bg"
     android:orientation="vertical">
 <LinearLayout
     android:layout_marginTop="@dimen/dimen_15dp"
@@ -38,13 +38,14 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/button_sign3"
+            android:src="@mipmap/sign_alarm"
            />
         <TextView
             android:layout_marginTop="@dimen/dimen_2dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
+            android:layout_marginRight="@dimen/dimen_4dp"
             android:text="@string/button_sign"/>
     </LinearLayout>
 </LinearLayout>

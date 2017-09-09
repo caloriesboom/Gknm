@@ -15,7 +15,6 @@ import gdg.com.gknm.R;
 import gdg.com.gknm.fragment.GasFragment;
 import gdg.com.gknm.fragment.WaterFragment;
 import gdg.com.gknm.utils.LogUtil;
-import gdg.com.gknm.utils.StartActivityUtils;
 import gdg.com.gknm.weight.CustomActionBar;
 import gdg.com.gknm.weight.IndicatorFragmentActivity;
 import gdg.com.gknm.weight.TitleIndicator;
@@ -32,8 +31,6 @@ public class ResultCheckActivity extends IndicatorFragmentActivity {
     TitleIndicator pagerindicator;
     @Bind(R.id.pager)
     ViewPagerCompat pager;
-    @Bind(R.id.btn_sign)
-    Button btnSign;
     public static final int FRAGMENT_ONE = 0;
     public static final int FRAGMENT_FOUR = 3;
 
@@ -91,10 +88,6 @@ public class ResultCheckActivity extends IndicatorFragmentActivity {
                 break;
         }
 
-    }
-    @OnClick(R.id.btn_sign)
-    public void onViewClicked() {
-        StartActivityUtils.startActivityNone(ResultCheckActivity.this,SignConfirmActivity.class);
     }
     private ArrayList<MyOnTouchListener> onTouchListeners = new ArrayList<MyOnTouchListener>(10);
 

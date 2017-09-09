@@ -15,8 +15,8 @@
         android:orientation="vertical"
         tools:ignore="UselessParent">
         <ImageView
-            android:layout_width="@dimen/dimen_100dp"
-            android:layout_height="@dimen/dimen_100dp"
+            android:layout_width="@dimen/dimen_180dp"
+            android:layout_height="@dimen/dimen_180dp"
             android:layout_gravity="center"
             android:layout_marginBottom="@dimen/dimen_20dp"
             android:src="@mipmap/loginlogo"

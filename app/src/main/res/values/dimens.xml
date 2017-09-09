@@ -28,7 +28,9 @@
     <dimen name="dimen_70dp">70dp</dimen>
     <dimen name="dimen_80dp">80dp</dimen>
     <dimen name="dimen_100dp">100dp</dimen>
-    <dimen name="dimen_120dp">100dp</dimen>
+    <dimen name="dimen_120dp">120dp</dimen>
+    <dimen name="dimen_150dp">150dp</dimen>
+    <dimen name="dimen_180dp">180dp</dimen>
     <dimen name="dimen_200dp">200dp</dimen>
     <dimen name="dimen_300dp">300dp</dimen>
     <dimen name="dimen_400dp">400dp</dimen>
@@ -70,5 +72,8 @@
 
     <!--首页企业排行text_size-->
     <dimen name="rank_text_size">16sp</dimen>
+
+    <!--动态添加question text_size-->
+    <dimen name="text_size_question">14sp</dimen>
 
 </resources>

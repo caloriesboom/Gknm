@@ -32,10 +32,10 @@ public class WorkAdapter extends BaseAdapter {
     }
 
     private void initIcon() {
-                nList.add(R.mipmap.jiankongbaojing);
-                nList.add(R.mipmap.jiandujiancha);
-                nList.add(R.mipmap.lishiwentichakan);
-                nList.add(R.mipmap.xianchangjiancha);
+                nList.add(R.mipmap.jkbj);
+                nList.add(R.mipmap.jdjc);
+                nList.add(R.mipmap.lswt);
+                nList.add(R.mipmap.jdzd);
     }
 
     @Override

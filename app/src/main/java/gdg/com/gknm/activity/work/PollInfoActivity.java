@@ -81,7 +81,6 @@ public class PollInfoActivity extends BaseActivity {
 
     private void initActionBar() {
         customActionBar.setLeftImageClickListener(this);
-        customActionBar.getRightImageView().setVisibility(View.VISIBLE);
     }
 
     protected void initView() {

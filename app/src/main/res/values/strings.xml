@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">鄂尔多斯</string>
+    <string name="app_name">环境监管</string>
 
     <!--登录页面-->
     <string name="hint_login_username">请输入您的用户名</string>
