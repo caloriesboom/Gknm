@@ -1,7 +1,6 @@
 package gdg.com.gknm.activity.work;
 
 import android.os.Bundle;
-import android.view.View;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -21,6 +20,5 @@ public class HistoryActivity extends BaseActivity {
     }
     private void initActionBar() {
         mActionBar.setLeftImageClickListener(this);
-        mActionBar.getRightImageView().setVisibility(View.VISIBLE);
     }
 }

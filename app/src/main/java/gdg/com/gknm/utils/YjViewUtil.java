@@ -22,9 +22,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.Environment;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
@@ -34,8 +39,11 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -453,7 +461,9 @@ public class YjViewUtil {
     }
 
 
-    /**分享信息
+    /**
+     * 分享信息
+     *
      * @param context
      * @param toShare
      */
@@ -463,7 +473,7 @@ public class YjViewUtil {
         intent.putExtra(Intent.EXTRA_SUBJECT, "选择分享方式");
         intent.putExtra(Intent.EXTRA_TEXT, toShare.trim());
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        toActivity(context, intent, -1,true);
+        toActivity(context, intent, -1, true);
     }
 
     public static void toActivity(final Activity context, final Intent intent, final int requestCode, final boolean showAnimation) {
@@ -480,12 +490,74 @@ public class YjViewUtil {
                     context.startActivityForResult(intent, requestCode);
                 }
                 if (showAnimation) {
-                    context. overridePendingTransition(R.anim.screen_zoom_in, R.anim.screen_zoom_out);
+                    context.overridePendingTransition(R.anim.screen_zoom_in, R.anim.screen_zoom_out);
                 } else {
-                    context. overridePendingTransition(R.anim.screen_zoom_in, R.anim.screen_zoom_out);
+                    context.overridePendingTransition(R.anim.screen_zoom_in, R.anim.screen_zoom_out);
                 }
             }
         });
     }
 
+    //Bitmap转换成byte[ ]:
+    public static byte[] getBytes(Bitmap bitmap) {
+        //实例化字节数组输出流
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 0, baos);//压缩位图
+        return baos.toByteArray();//创建分配字节数组
+    }
+
+    //把byte[ ]转换回来Bitmap:
+    public static Bitmap getBitmap(byte[] data) {
+        return BitmapFactory.decodeByteArray(data, 0, data.length);//从字节数组解码位图
+    }
+
+    /**
+     * 保存bitmap到SD卡
+     * @param bitName 保存的名字
+     * @param mBitmap 图片对像
+     * return 生成压缩图片后的图片路径
+     */
+    public static String saveMyBitmap(String bitName,Bitmap mBitmap) {
+        Bitmap outB = mBitmap.copy(Bitmap.Config.ARGB_8888,true);
+        Canvas canvas=new Canvas(outB);
+        canvas.drawColor(Color.WHITE);
+        canvas.drawBitmap(mBitmap, 0, 0, null);
+        String signSavePath = Environment.getExternalStorageDirectory()+"/SignFile/";
+        File f1 = new File(signSavePath);
+        if (!f1.exists()) {
+            f1.mkdir();
+        }
+        String file_path = f1.getAbsolutePath()+"/"+bitName+".png";
+        File f = new File(file_path);
+        try {
+
+            f.createNewFile();
+        } catch (IOException e) {
+            System.out.println("在保存图片时出错：" + e.toString());
+        }
+        FileOutputStream fOut = null;
+        try {
+            fOut = new FileOutputStream(f);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        try {
+            outB.compress(Bitmap.CompressFormat.PNG, 100, fOut);
+           // mBitmap.compress(Bitmap.CompressFormat.JPEG, 100, fOut);
+        } catch (Exception e) {
+            return "create_bitmap_error";
+        }
+        try {
+            fOut.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            fOut.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return signSavePath + bitName + ".png";
+    }
 }

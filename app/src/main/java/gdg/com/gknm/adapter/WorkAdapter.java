@@ -35,7 +35,7 @@ public class WorkAdapter extends BaseAdapter {
                 nList.add(R.mipmap.jkbj);
                 nList.add(R.mipmap.jdjc);
                 nList.add(R.mipmap.lswt);
-                nList.add(R.mipmap.jdzd);
+                nList.add(R.mipmap.jdzd1);
     }
 
     @Override

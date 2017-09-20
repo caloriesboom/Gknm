@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <gdg.com.gknm.weight.CustomActionBar
+        android:id="@+id/custom_action_bar"
+        android:layout_width="fill_parent"
+        app:middle_text="系统设置"
+        app:left_image="@mipmap/back"
+        android:layout_height="wrap_content" />
+
+    <gdg.com.gknm.weight.CustomItemLayout
+        android:id="@+id/system_check_new_version"
+        android:layout_width="wrap_content"
+        app:my_left_text="检查版本更新"
+        app:my_right_text=""
+        android:clickable="true"
+        android:background="@drawable/me_pressed_background"
+        app:my_right_image="@mipmap/arrow_right"
+        android:layout_height="wrap_content" />
+
+    <gdg.com.gknm.weight.CustomItemLayout
+        android:id="@+id/system_about_us"
+        android:layout_width="wrap_content"
+        app:my_left_text="关于我们"
+        android:clickable="true"
+        android:background="@drawable/me_pressed_background"
+        app:my_right_image="@mipmap/arrow_right"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

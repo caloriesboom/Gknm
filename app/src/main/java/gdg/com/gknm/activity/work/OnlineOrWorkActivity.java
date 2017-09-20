@@ -12,15 +12,15 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import gdg.com.gknm.R;
-import gdg.com.gknm.fragment.GasFragment;
-import gdg.com.gknm.fragment.WaterFragment;
+import gdg.com.gknm.fragment.GkFragment;
+import gdg.com.gknm.fragment.OnlineFragment;
 import gdg.com.gknm.utils.LogUtil;
 import gdg.com.gknm.weight.CustomActionBar;
 import gdg.com.gknm.weight.IndicatorFragmentActivity;
 import gdg.com.gknm.weight.TitleIndicator;
 import gdg.com.gknm.weight.ViewPagerCompat;
 
-public class ResultCheckActivity extends IndicatorFragmentActivity {
+public class OnlineOrWorkActivity extends IndicatorFragmentActivity {
     @Bind(R.id.custom_action_bar)
     CustomActionBar mActionBar;
     @Bind(R.id.prev1)
@@ -31,30 +31,46 @@ public class ResultCheckActivity extends IndicatorFragmentActivity {
     TitleIndicator pagerindicator;
     @Bind(R.id.pager)
     ViewPagerCompat pager;
-    public static final int FRAGMENT_ONE = 0;
-    public static final int FRAGMENT_FOUR = 3;
+    public static final int FRAGMENT_ONLINE = 0;
+    public static final int FRAGMENT_GK = 3;
+    private String TAG = "OnlineOrWorkActivity";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
         initActionBar();
+        initView();
+
+    }
+
+    private void initView() {
+            prev1.setBackgroundResource(R.drawable.switch_button_left);
+            prev1.setTextColor(getResources().getColor(R.color.colorPrimaryStyles));
+            prev4.setBackgroundResource(R.drawable.switch_button_right_checked);
+            prev4.setTextColor(getResources().getColor(R.color.white));
+    }
+
+    private void initData() {
+
     }
 
     @Override
     protected int getMainViewResId() {
-        return R.layout.activity_result_check;
+        return R.layout.activity_online_gk;
     }
 
     @Override
     protected int supplyTabs(List<TabInfo> tabs) {
-        tabs.add(new TabInfo(FRAGMENT_ONE, "废气", GasFragment.class));
-        tabs.add(new TabInfo(FRAGMENT_FOUR, "废水", WaterFragment.class));
-        return FRAGMENT_ONE;
-    }
 
+            tabs.add(new TabInfo(FRAGMENT_ONLINE, "在线报警", OnlineFragment.class));
+            tabs.add(new TabInfo(FRAGMENT_GK, "工况报警", GkFragment.class));
+            return FRAGMENT_ONLINE;
+
+    }
     private void initActionBar() {
         mActionBar.setLeftImageClickListener(this);
+
     }
 
     @Override
@@ -65,13 +81,13 @@ public class ResultCheckActivity extends IndicatorFragmentActivity {
             prev1.setTextColor(getResources().getColor(R.color.white));
             prev4.setBackgroundResource(R.drawable.switch_button_right);
             prev4.setTextColor(getResources().getColor(R.color.colorPrimaryStyles));
-
         } else if (position == 1) {
             prev1.setBackgroundResource(R.drawable.switch_button_left);
             prev1.setTextColor(getResources().getColor(R.color.colorPrimaryStyles));
             prev4.setBackgroundResource(R.drawable.switch_button_right_checked);
             prev4.setTextColor(getResources().getColor(R.color.white));
-
+            LogUtil.d(TAG,"selectPosition=="+position);
+         //   GasFragment gasfragment = (GasFragment) getFragmentById(FRAGMENT_GAS).createFragment(0);
         }
     }
 
@@ -79,16 +95,15 @@ public class ResultCheckActivity extends IndicatorFragmentActivity {
     public void onSelected(View view) {
         switch (view.getId()) {
             case R.id.prev1:
-                LogUtil.d("dianji" + view.getId());
-                onPageSelected(0);
+                    onPageSelected(0);
                 break;
             case R.id.prev4:
-                LogUtil.d("dianji" + view.getId());
-                onPageSelected(1);
+                    onPageSelected(1);
                 break;
         }
 
     }
+
     private ArrayList<MyOnTouchListener> onTouchListeners = new ArrayList<MyOnTouchListener>(10);
 
     @Override
@@ -106,7 +121,6 @@ public class ResultCheckActivity extends IndicatorFragmentActivity {
     public void unregisterMyOnTouchListener(MyOnTouchListener myOnTouchListener) {
         onTouchListeners.remove(myOnTouchListener);
     }
-
 
 
     public interface MyOnTouchListener {

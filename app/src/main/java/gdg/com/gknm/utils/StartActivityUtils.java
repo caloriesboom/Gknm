@@ -35,5 +35,13 @@ public class StartActivityUtils {
         intent.putExtra("tag3", tag3);
         packageContext.startActivity(intent);
     }
+    public static void startActivityFour(Context packageContext, Class<?> cls, String tag1, String tag2, String tag3, String tag4) {
+        Intent intent = new Intent(packageContext, cls);
+        intent.putExtra("tag1", tag1);
+        intent.putExtra("tag2", tag2);
+        intent.putExtra("tag3", tag3);
+        intent.putExtra("tag4", tag4);
+        packageContext.startActivity(intent);
+    }
 
 }

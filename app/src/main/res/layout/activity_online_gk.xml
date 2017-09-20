@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_monitor_alarm"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <gdg.com.gknm.weight.CustomActionBar
+        android:id="@+id/custom_action_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:left_image="@mipmap/back"
+        app:middle_text="@string/activity_monitor_title"
+        app:right_image="@mipmap/search_icon"/>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_indicate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/dimen_5dp"
+        android:layout_marginRight="@dimen/dimen_5dp"
+        android:paddingTop="@dimen/dimen_2dp"
+        >
+
+        <Button
+            android:id="@+id/prev1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_30dp"
+            android:layout_weight="1"
+            android:background="@drawable/switch_button_left_checked"
+            android:scaleType="fitXY"
+            android:clickable="false"
+            android:text="在线报警"
+            android:textColor="@color/white" />
+
+
+        <Button
+            android:id="@+id/prev4"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_30dp"
+            android:layout_weight="1"
+            android:textColor="@color/colorPrimaryStyles"
+            android:background="@drawable/switch_button_right"
+            android:scaleType="fitXY"
+            android:clickable="false"
+            android:text="工况报警" />
+
+    </LinearLayout>
+
+    <include layout="@layout/activity_viewpager_indicator" />
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+</LinearLayout>

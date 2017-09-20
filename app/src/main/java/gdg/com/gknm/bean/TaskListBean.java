@@ -128,8 +128,8 @@ public class TaskListBean extends BaseResult implements Serializable {
             private TaskManagementBean taskManagement;
             private int taskManagementId;
             private Object checkTime;
-            private Object isEnterpriseRectification;
-            private Object waterOrGas;
+            private String isEnterpriseRectification;
+            private String waterOrGas;
             private Object siteInspectionResult;
             private Object moveStatus;
             private Object rectificationAdviseId;
@@ -177,19 +177,19 @@ public class TaskListBean extends BaseResult implements Serializable {
                 this.checkTime = checkTime;
             }
 
-            public Object getIsEnterpriseRectification() {
+            public String getIsEnterpriseRectification() {
                 return isEnterpriseRectification;
             }
 
-            public void setIsEnterpriseRectification(Object isEnterpriseRectification) {
+            public void setIsEnterpriseRectification(String isEnterpriseRectification) {
                 this.isEnterpriseRectification = isEnterpriseRectification;
             }
 
-            public Object getWaterOrGas() {
+            public String getWaterOrGas() {
                 return waterOrGas;
             }
 
-            public void setWaterOrGas(Object waterOrGas) {
+            public void setWaterOrGas(String waterOrGas) {
                 this.waterOrGas = waterOrGas;
             }
 

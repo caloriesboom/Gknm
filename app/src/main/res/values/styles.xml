@@ -34,7 +34,7 @@
     <style name="ItemText">
         <item name="android:layout_width">@dimen/dimen_0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">12sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:gravity">center</item>
     </style>
 
@@ -58,6 +58,19 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:editable">false</item>
         <item name="android:focusable">false</item>
+        <item name="android:paddingLeft">@dimen/dimen_5dp</item>
+        <item name="android:paddingRight">@dimen/dimen_5dp</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="EditTextGas">
+        <item name="android:layout_width">@dimen/dimen_0dp</item>
+        <item name="android:layout_height">@dimen/dimen_40dp</item>
+        <item name="android:layout_weight">5</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_5dp</item>
+        <item name="android:layout_marginRight">@dimen/dimen_10dp</item>
+        <item name="android:layout_marginTop">@dimen/dimen_5dp</item>
+        <item name="android:background">@drawable/dark_primary_color_angle22</item>
+        <item name="android:gravity">center_vertical</item>
         <item name="android:paddingLeft">@dimen/dimen_5dp</item>
         <item name="android:paddingRight">@dimen/dimen_5dp</item>
         <item name="android:textSize">14sp</item>
@@ -140,5 +153,37 @@
         <item name="android:textColor">@color/tab_unselected</item>
         <item name="android:singleLine">true</item>
         <item name="android:ellipsize">marquee</item>
+    </style>
+
+
+    <style name="take_photo_anim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/pop_exit_anim</item>
+    </style>
+    <item name="imageId" type="id"/>
+
+
+
+    <style name="BaseBtnStyle">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/btn_blue_selector</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_margin">@dimen/dimen_20dp</item>
+    </style>
+
+    <style name="EditTextTime">
+        <item name="android:layout_width">@dimen/dimen_0dp</item>
+        <item name="android:layout_height">@dimen/dimen_40dp</item>
+        <item name="android:layout_weight">5</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_5dp</item>
+        <item name="android:layout_marginRight">@dimen/dimen_10dp</item>
+        <item name="android:layout_marginTop">@dimen/dimen_5dp</item>
+        <item name="android:background">@drawable/dark_primary_color_angle22</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">@dimen/dimen_5dp</item>
+        <item name="android:paddingRight">@dimen/dimen_5dp</item>
+        <item name="android:textSize">14sp</item>
     </style>
 </resources>

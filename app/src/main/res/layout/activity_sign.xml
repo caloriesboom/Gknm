@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_monitor_alarm"
+    xmlns:tools="http://schemas.android.com/tools"
     android:fitsSystemWindows="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,5 +14,96 @@
         app:left_image="@mipmap/back"
         app:middle_text="@string/activity_sign_title"
         app:right_image="@mipmap/search_icon"/>
+    <LinearLayout
+        android:layout_marginTop="@dimen/dimen_1dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50dp"
+        android:gravity="center_horizontal"
+        android:background="@color/view_grid_line">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:text="@string/activity_sign_second_title"/>
+    </LinearLayout>
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:shrinkColumns="*"
+        android:stretchColumns="*">
 
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:paddingTop="2dp"
+            android:gravity="center"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:id="@+id/btn_abnormal_sourcename"
+                style="@style/HeaderText"
+                android:layout_marginRight="@dimen/dimen_1dp"
+                android:layout_marginEnd="@dimen/dimen_1dp"
+                android:layout_weight="3"
+                android:text="报警源"
+                />
+
+            <TextView
+                android:id="@+id/btn_abnormal_pointname"
+                style="@style/HeaderText"
+                android:layout_marginRight="@dimen/dimen_1dp"
+                android:layout_marginEnd="@dimen/dimen_1dp"
+                android:layout_weight="2"
+                android:text="报警类型"
+                />
+
+            <TextView
+                android:id="@+id/btn_abnormal_time"
+                style="@style/HeaderText"
+                android:layout_marginRight="@dimen/dimen_1dp"
+                android:layout_marginEnd="@dimen/dimen_1dp"
+                android:layout_weight="1"
+                android:text="待办"
+                />
+
+        </TableRow>
+    </TableLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/null_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@mipmap/null_image"
+            android:gravity="center"
+            android:visibility="gone" />
+
+        <com.scu.miomin.shswiperefresh.core.SHSwipeRefreshLayout
+            android:id="@+id/refresh_layout"
+            app:load_text="加载更多"
+            app:progress_bar_color="@color/colorPrimaryStyles"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:refresh_text="下拉刷新"
+            app:guidance_text_color="@color/colorPrimary"
+            app:guidance_view_bg_color="@color/transparent">
+
+            <com.scu.miomin.shswiperefresh.view.SHListView
+                android:id="@+id/list_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:cacheColorHint="@android:color/transparent"
+                android:divider="@android:color/transparent"
+                android:listSelector="@android:color/transparent"
+                android:scrollbars="none" />
+        </com.scu.miomin.shswiperefresh.core.SHSwipeRefreshLayout>
+    </FrameLayout>
 </LinearLayout>

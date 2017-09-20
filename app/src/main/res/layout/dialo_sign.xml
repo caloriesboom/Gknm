@@ -1,0 +1,94 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dimen_30dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_20dp"
+            android:layout_marginRight="@dimen/dimen_20dp"
+            android:background="@drawable/white_color_share"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_ed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/dimen_5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="350dp">
+           <com.github.gcacace.signaturepad.views.SignaturePad
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               xmlns:android="http://schemas.android.com/apk/res/android"
+               android:id="@+id/signature_pad"
+               app:penColor="@android:color/black"/>
+
+       </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_save"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="@dimen/dimen_15dp"
+                    android:layout_marginLeft="@dimen/dimen_20dp"
+                    android:layout_marginRight="@dimen/dimen_20dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_primary_color_selector2"
+                    android:text="保存"
+                    android:textColor="@color/colorPrimaryStyles" />
+
+                <Button
+                    android:id="@+id/btn_clean"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="@dimen/dimen_15dp"
+                    android:layout_marginLeft="@dimen/dimen_20dp"
+                    android:layout_marginRight="@dimen/dimen_20dp"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_primary_color_selector2"
+                    android:text="清除"
+                    android:textColor="@color/colorPrimaryStyles" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+        <TextView
+            android:background="@color/colorPrimaryStyles2"
+            android:layout_width="1.5dp"
+            android:layout_height="@dimen/dimen_25dp" />
+
+        <ImageView
+            android:id="@+id/colse_pop"
+            android:layout_width="@dimen/dimen_30dp"
+            android:layout_height="@dimen/dimen_30dp"
+            android:src="@mipmap/close_icon" />
+    </LinearLayout>
+</FrameLayout>
+
+

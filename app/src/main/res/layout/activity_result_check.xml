@@ -53,6 +53,7 @@
             android:layout_weight="1"
             android:background="@drawable/switch_button_left_checked"
             android:scaleType="fitXY"
+            android:clickable="false"
             android:text="废气"
             android:textColor="@color/white" />
 
@@ -65,6 +66,7 @@
             android:textColor="@color/colorPrimaryStyles"
             android:background="@drawable/switch_button_right"
             android:scaleType="fitXY"
+            android:clickable="false"
             android:text="废水" />
 
     </LinearLayout>

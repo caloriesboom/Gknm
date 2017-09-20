@@ -11,6 +11,7 @@
         android:id="@+id/tableLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_5dp"
         android:layout_marginTop="1dp"
         android:shrinkColumns="*"
         android:stretchColumns="*"
@@ -36,7 +37,7 @@
                 />
 
             <TextView
-                android:id="@+id/poll_name"
+                android:id="@+id/et_check_time"
                 style="@style/ItemText"
                 android:layout_marginRight="@dimen/dimen_1dp"
                 android:layout_marginEnd="@dimen/dimen_1dp"
@@ -57,7 +58,7 @@
                 android:id="@+id/handle"
                 style="@style/ItemText"
                 android:layout_weight="0.8"
-                android:padding="@dimen/dimen_3dp"
+                android:padding="@dimen/dimen_5dp"
                 android:layout_marginRight="@dimen/dimen_1dp"
                 android:layout_marginEnd="@dimen/dimen_1dp"
                 android:textColor="@color/colorPrimaryStyles"

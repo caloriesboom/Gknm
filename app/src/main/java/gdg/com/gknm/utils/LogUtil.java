@@ -18,7 +18,7 @@ public class LogUtil {
     /**
      * 下面这个变量定义日志级别
      */
-    public static final int LEVEL = DEBUG;
+    public static final int LEVEL = 0;
 
     public static void v(String tag, String msg) {
         if (LEVEL <= VERBOSE) {

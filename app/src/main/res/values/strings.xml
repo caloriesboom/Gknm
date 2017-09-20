@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">环境监管</string>
+    <string name="exit_info">再按一次退出</string>
 
     <!--登录页面-->
     <string name="hint_login_username">请输入您的用户名</string>
@@ -37,6 +38,7 @@
     <string name="activity_supervision_local_check">现场检查结果记录</string>
     <!--监督检查——签字确认-->
     <string name="activity_supervision_sign_confirm">签字确认</string>
+    <string name="activity_sign_second_title">已标记报警</string>
     <!--监督检查——治污工艺-->
     <string name="activity_pollution_control">治污工艺详情</string>
     <!--监督检查——治污工艺-表头-->
@@ -50,4 +52,14 @@
     <string name="activity_local_supervision_title">现场检查监督指导</string>
     <!--历史问题查看-->
     <string name="activity_history_title">历史问题查看</string>
+    !--我的界面-->
+    <string name="my_feedback_content_hint">反馈内容</string>
+    <string name="my_feedback_contact_hint">联系方式（Email、QQ号或其他）</string>
+    <string name="my_feedback_tips">你的联系方式有助于我们沟通和解决问题，仅工作人员可见</string>
+    <string name="my_feedback_submit">提交反馈</string>
+    <string name="my_service_leave_message">问题留言</string>
+    <string name="my_service_normal_question">常见问题反馈</string>
+    <string name="my_service_check_question_type">请选择问题类型</string>
+    <string name="my_service_check_normal_type">请选择异常类型</string>
+    <string name="my_service_use_help">使用帮助</string>
 </resources>

@@ -31,9 +31,7 @@ public class pollutionContrAdapter extends CommonAdapter<PollutionControlBean.Re
 
 
         ((TextView)myViewHolder.getView(R.id.facility_name)).setText(dataBean.getFacilityName());
-       // ((TextView)myViewHolder.getView(R.id.creat_time)).setText( dataBean.get);
-      //  ((TextView)myViewHolder.getView(R.id.opr_time)).setText(dataBean.getTaskManagement().getTaskEndTime());
-      //  ((TextView)myViewHolder.getView(R.id.handle)).setText("处理");
+        ((TextView)myViewHolder.getView(R.id.handle)).setText(dataBean.getTechnolyTypeName());
         ((TextView)myViewHolder.getView(R.id.design)).setText(dataBean.getDealAbility());
        // ((TextView)myViewHolder.getView(R.id.run)).setText(dataBean);
 

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <gdg.com.gknm.weight.CustomActionBar
+        android:id="@+id/custom_action_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:left_image="@mipmap/back"
+        app:middle_text="用户信息" />
+
+    <LinearLayout
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginTop="@dimen/me_margin_height"
+        android:background="@drawable/board_submit_background_white"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:paddingLeft="@dimen/dimen_15dp"
+            android:paddingRight="@dimen/dimen_15dp"
+            android:id="@+id/rl_icon"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dimen_60dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/my_left_text"
+                android:textSize="16sp"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="头像" />
+
+            <ImageView
+                android:id="@+id/my_right_image"
+                android:layout_alignParentRight="true"
+                android:layout_width="@dimen/dimen_30dp"
+                android:layout_height="@dimen/dimen_30dp"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/dimen_4dp"
+                android:src="@mipmap/arrow_right" />
+
+            <gdg.com.gknm.weight.CircleImageView
+                android:id="@+id/circle_image"
+                android:layout_toLeftOf="@id/my_right_image"
+                android:layout_width="@dimen/dimen_30dp"
+                android:layout_height="@dimen/dimen_30dp"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/dimen_8dp"
+                />
+
+
+        </RelativeLayout>
+        <View
+            android:id="@+id/divider_line"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#f0f0f0" />
+        <gdg.com.gknm.weight.CustomItemLayout
+            android:id="@+id/my_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/me_pressed_background"
+            android:clickable="true"
+            app:my_left_text="用户名" />
+
+        <gdg.com.gknm.weight.CustomItemLayout
+            android:id="@+id/my_real_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/me_pressed_background"
+            android:clickable="true"
+            app:my_left_text="姓名" />
+
+        <gdg.com.gknm.weight.CustomItemLayout
+            android:id="@+id/my_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/me_pressed_background"
+            android:clickable="true"
+            app:my_left_text="工号" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_red_selector"
+            android:onClick="logout"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:text="退 出" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

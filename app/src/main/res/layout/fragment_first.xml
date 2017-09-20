@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@mipmap/bg"
+    android:background="@mipmap/bacg"
     android:orientation="vertical">
 <LinearLayout
     android:layout_marginTop="@dimen/dimen_15dp"
@@ -14,20 +14,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="21sp"
         android:text="@string/activity_task_title"/>
 </LinearLayout>
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/ep_first"
-    android:textSize="16sp"
-    android:layout_margin="@dimen/dimen_6dp"
-    android:textColor="@color/white"/>
-    <ListView
-        android:id="@+id/lv_task"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_300dp" />
+        android:layout_marginTop="@dimen/dimen_30dp"
+        android:layout_marginLeft="@dimen/dimen_20dp"
+        android:layout_marginRight="@dimen/dimen_20dp"
+        android:layout_height="@dimen/dimen_250dp">
+        <TextView
+            android:id="@+id/null_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@mipmap/null_image"
+            android:gravity="center"
+            android:visibility="gone" />
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <gdg.com.gknm.weight.CustomListView
+                android:id="@+id/lv_task"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:cacheColorHint="@android:color/transparent"
+                android:divider="@android:color/transparent"
+                android:listSelector="@android:color/transparent"
+                android:scrollbars="none" />
+
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </FrameLayout>
     <LinearLayout
         android:id="@+id/ll_sign"
         android:layout_width="wrap_content"

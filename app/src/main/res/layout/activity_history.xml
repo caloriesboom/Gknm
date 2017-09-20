@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_monitor_alarm"
     android:fitsSystemWindows="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,5 +13,81 @@
         app:left_image="@mipmap/back"
         app:middle_text="@string/activity_history_title"
         app:right_image="@mipmap/search_icon"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/dimen_100dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="7">
+
+            <TextView
+                style="@style/TextPollInfo"
+                android:textSize="18sp"
+                android:text="选择区域:" />
+
+            <RelativeLayout style="@style/RelationLayoutPollInfo">
+                <Spinner
+                    android:id="@+id/sp_zone_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_40dp" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="7">
+
+            <TextView
+                style="@style/TextPollInfo"
+                android:textSize="18sp"
+                android:text="企业名称:" />
+
+            <RelativeLayout style="@style/RelationLayoutPollInfo">
+                <Spinner
+                    android:id="@+id/sp_poll_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_40dp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/dimen_20dp"
+    android:layout_marginRight="@dimen/dimen_20dp"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_40dp"
+        android:textSize="18sp"
+        android:text="最近一月"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:layout_height="@dimen/dimen_45dp"
+        android:textSize="18sp"
+        android:text="最近一季"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:layout_height="@dimen/dimen_45dp"
+        android:textSize="18sp"
+        android:text="最近一年"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:layout_height="@dimen/dimen_45dp"
+        android:textSize="18sp"
+        android:text="全部记录"/>
 
 </LinearLayout>
+
+    </LinearLayout>
+

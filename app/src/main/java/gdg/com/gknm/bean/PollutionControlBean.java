@@ -82,7 +82,7 @@ public class PollutionControlBean extends BaseResult implements Serializable {
             private String serName;
             private String dealAbility;
             private String technolyTypeId;
-            private Object technolyTypeName;
+            private String technolyTypeName;
             private Object facilityBasOrder;
             private PollsourceBean pollsource;
             private Object pollout;
@@ -167,11 +167,11 @@ public class PollutionControlBean extends BaseResult implements Serializable {
                 this.technolyTypeId = technolyTypeId;
             }
 
-            public Object getTechnolyTypeName() {
+            public String getTechnolyTypeName() {
                 return technolyTypeName;
             }
 
-            public void setTechnolyTypeName(Object technolyTypeName) {
+            public void setTechnolyTypeName(String technolyTypeName) {
                 this.technolyTypeName = technolyTypeName;
             }
 

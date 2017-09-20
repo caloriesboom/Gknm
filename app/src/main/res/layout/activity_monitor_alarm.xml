@@ -14,5 +14,34 @@
         app:left_image="@mipmap/back"
         app:middle_text="@string/activity_monitor_title"
         app:right_image="@mipmap/search_icon"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/null_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@mipmap/null_image"
+            android:gravity="center"
+            android:visibility="gone" />
 
+        <com.scu.miomin.shswiperefresh.core.SHSwipeRefreshLayout
+            android:id="@+id/refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <com.scu.miomin.shswiperefresh.view.SHListView
+                android:id="@+id/list_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:cacheColorHint="@android:color/transparent"
+                android:divider="@android:color/transparent"
+                android:listSelector="@android:color/transparent"
+                android:scrollbars="none" />
+
+
+        </com.scu.miomin.shswiperefresh.core.SHSwipeRefreshLayout>
+    </FrameLayout>
 </LinearLayout>

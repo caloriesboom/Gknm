@@ -103,7 +103,8 @@
             android:orientation="horizontal"
             android:layout_marginTop="@dimen/dimen_20dp"
             android:layout_gravity="end"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:visibility="invisible">
             <CheckBox
                 android:id="@+id/check_box_remeber"
                 android:layout_width="20dp"
@@ -153,6 +154,7 @@
                 android:text="@string/button_setting"
                 android:textColor="@color/white"
                 android:textSize="18sp"
+                android:visibility="gone"
                 />
 
         </LinearLayout>

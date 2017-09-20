@@ -27,10 +27,133 @@
             android:textSize="16sp"
             android:text="@string/activity_supervision_sign_confirm"/>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="7">
+        <TextView
+            style="@style/TextPollInfo"
+            android:text="检查时间:" />
+
+        <gdg.com.gknm.weight.CustomEditText
+            android:id="@+id/et_check_time"
+            android:gravity="center"
+            style="@style/EditTextPollInfo" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="7">
+        <TextView
+            style="@style/TextPollInfo"
+            android:text="检查单位:" />
+        <RelativeLayout style="@style/RelationLayoutPollInfo">
+            <gdg.com.gknm.utils.MultiSpinner
+                android:id="@+id/sp_check_unit"
+                android:layout_width="match_parent"
+                android:enabled="false"
+                android:clickable="false"
+                android:focusable="false"
+                android:layout_height="@dimen/dimen_40dp"
+                android:gravity="center"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="7">
+        <TextView
+            style="@style/TextPollInfo"
+            android:text="检查人员:" />
+        <RelativeLayout style="@style/RelationLayoutPollInfo">
+            <gdg.com.gknm.utils.MultiSpinner
+                android:id="@+id/sp_check_person"
+                android:layout_width="match_parent"
+                android:enabled="false"
+                android:clickable="false"
+                android:focusable="false"
+                android:gravity="center"
+                android:layout_height="@dimen/dimen_40dp" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:id="@+id/ll_poll_sign"
+        android:background="@color/colorPrimaryStyles2">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_30dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="企业现场负责人签字"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_third_sign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_2dp"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:background="@color/colorPrimaryStyles2">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_30dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="第三方运维现场负责人签字"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_check_unit_sign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_2dp"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:background="@color/colorPrimaryStyles2">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_30dp"
+            android:layout_marginTop="@dimen/dimen_2dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="检查单位现场负责人签字"/>
+    </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
+        <LinearLayout
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            android:orientation="horizontal"
+            android:layout_alignParentTop="true">
+            <ImageView
+                android:id="@+id/iv_poll_sign"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen_130dp"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/iv_third_sign"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen_130dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/iv_unit_sign"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen_130dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"

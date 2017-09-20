@@ -10,13 +10,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import gdg.com.gknm.base.BaseActivity;
+import gdg.com.gknm.even.ExitLoginEvent;
 import gdg.com.gknm.fragment.FirstFragment;
 import gdg.com.gknm.fragment.MeFragment;
 import gdg.com.gknm.fragment.WorkFragment;
-import gdg.com.gknm.base.BaseActivity;
+import gdg.com.gknm.utils.RxBus;
 
 public class HomeActivity extends BaseActivity {
     public static final String HOME = "HOME";
@@ -184,10 +187,10 @@ public class HomeActivity extends BaseActivity {
         Long now = System.currentTimeMillis();
         if (Math.abs(now - mLastPressed) <= EXIT_TIME) {
             super.onBackPressed();
-           // RxBus.getInstance().post(new ExitLoginEvent());
+            RxBus.getInstance().post(new ExitLoginEvent());
         } else {
             mLastPressed = now;
-         //   Toast.makeText(this, getResources().getString(R.string.exit_info), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getString(R.string.exit_info), Toast.LENGTH_SHORT).show();
         }
     }
 

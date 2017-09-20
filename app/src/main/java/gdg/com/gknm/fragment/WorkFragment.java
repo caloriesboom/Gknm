@@ -14,7 +14,7 @@ import gdg.com.gknm.R;
 import gdg.com.gknm.activity.work.HistoryActivity;
 import gdg.com.gknm.activity.work.LocaleInspectActivity;
 import gdg.com.gknm.activity.work.MonitorAlarmActivity;
-import gdg.com.gknm.activity.work.SupervisionActivity;
+import gdg.com.gknm.activity.work.TaskInfoActivity;
 import gdg.com.gknm.adapter.WorkAdapter;
 import gdg.com.gknm.base.baseFragment;
 
@@ -67,7 +67,7 @@ public class WorkFragment extends baseFragment {
 
             } else if (i==1) {
                 //监督检查
-                startNewActivity(SupervisionActivity.class);
+                startNewActivity(TaskInfoActivity.class);
 
             } else if (i==2) {
                 //历史问题

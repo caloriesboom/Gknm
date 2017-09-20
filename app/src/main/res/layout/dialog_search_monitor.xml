@@ -1,0 +1,139 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:layout_marginBottom="@dimen/dimen_20dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_10dp"
+            android:layout_marginRight="@dimen/dimen_10dp"
+            android:background="@drawable/white_color_share"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="7">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    style="@style/TextPollInfo"
+                    android:text="企业名称:" />
+
+                <RelativeLayout style="@style/RelationLayoutPollInfo">
+                    <Spinner
+                        android:id="@+id/sp_poll_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_40dp" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="7">
+
+                <TextView
+                    style="@style/TextPollInfo"
+                    android:text="报警类型:" />
+
+                <RelativeLayout style="@style/RelationLayoutPollInfo">
+                    <Spinner
+                        android:id="@+id/sp_alarm_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_40dp" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="7">
+
+                <TextView
+                    style="@style/TextPollInfo"
+                    android:text="异常类型:" />
+
+                <RelativeLayout style="@style/RelationLayoutPollInfo">
+                    <Spinner
+                        android:id="@+id/sp_normal_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_40dp" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="7">
+                <TextView
+                    style="@style/TextPollInfo"
+                    android:text="开始时间:" />
+
+                <EditText
+                    android:id="@+id/et_start_time"
+                    android:focusable="false"
+                    style="@style/EditTextTime"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="7">
+                <TextView
+                    style="@style/TextPollInfo"
+                    android:text="结束时间:" />
+
+                <EditText
+                    android:id="@+id/et_end_time"
+                    android:focusable="false"
+                    style="@style/EditTextTime" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_ok"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="@dimen/dimen_15dp"
+                    android:layout_marginLeft="@dimen/dimen_20dp"
+                    android:layout_marginRight="@dimen/dimen_20dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_primary_color_selector2"
+                    android:text="确定"
+                    android:textColor="@color/colorPrimaryStyles" />
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="@dimen/dimen_15dp"
+                    android:layout_marginLeft="@dimen/dimen_20dp"
+                    android:layout_marginRight="@dimen/dimen_20dp"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_primary_color_selector2"
+                    android:text="取消"
+                    android:textColor="@color/colorPrimaryStyles" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
+
+
