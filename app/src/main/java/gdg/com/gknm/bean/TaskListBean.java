@@ -358,6 +358,16 @@ public class TaskListBean extends BaseResult implements Serializable {
                 private String acceptStatus;
                 private int isDelete;
 
+                public String getTaskSourceName() {
+                    return taskSourceName;
+                }
+
+                public void setTaskSourceName(String taskSourceName) {
+                    this.taskSourceName = taskSourceName;
+                }
+
+                private String taskSourceName;
+
                 public int getTaskManagementId() {
                     return taskManagementId;
                 }

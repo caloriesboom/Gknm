@@ -3,6 +3,7 @@ package gdg.com.gknm.weight;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,7 +65,14 @@ public class TaskPopWindow extends PopupWindow {
 
     private void initData() {
         tvStartTime.setText(dataBean.getTaskManagement().getTaskIssuedTime());
-        tvEndTime.setText(dataBean.getTaskManagement().getTaskSource());
+        if(TextUtils.equals("1",dataBean.getTaskManagement().getTaskSource())){
+            tvEndTime.setText("定期任务");
+        }else if(TextUtils.equals("2",dataBean.getTaskManagement().getTaskSource())){
+            tvEndTime.setText("人工生成");
+        }else if(TextUtils.equals("3",dataBean.getTaskManagement().getTaskSource())){
+            tvEndTime.setText("报警任务");
+        }
+
         tvAlarmCause.setText(dataBean.getTaskManagement().getTaskContents());
 
     }

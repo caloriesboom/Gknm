@@ -66,7 +66,7 @@ public class MyMessageActivity extends BaseActivity {
         String time = currentTime.split(" ")[1];
         String beginDate = DateUtil.getCurrentDay()+"%00:00:00";
         String endDate = day+"%"+time;
-        mSubscription = RetorfitManager.getInstance().createReq(ApiService.class).getMonitorAlarmList("", beginDate, endDate,"3","",20,0)
+        mSubscription = RetorfitManager.getInstance().createReq(ApiService.class).getMonitorAlarmList("", beginDate, endDate,"3","",20,startRecord)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new BaseObserver<MonitorAlarmBean>(this) {
@@ -82,6 +82,7 @@ public class MyMessageActivity extends BaseActivity {
 
                         taskAdapter = new MessageAdapter(MyMessageActivity.this, mList, R.layout.item_my_message_layout);
                         listView.setAdapter(taskAdapter);
+                        listView.setSelection(mList.size()-1);
                         if (isRefresh) {
                             swipeRefreshLayout.finishRefresh();
                         } else {

@@ -213,6 +213,7 @@ public interface ApiService {
             @Query("checkUnit") String userName,
             @Query("checkTime") String checkTime,
             @Query("isEnterpriseRectification") String isEnterpriseRectification,
+            @Query("moveStatus") String moveStatus,
             @Query("waterOrGas") String waterOrGas,
             @Query("enterpriseType") String enterpriseType,
             @Query("taskProgressId") String taskProgressId,

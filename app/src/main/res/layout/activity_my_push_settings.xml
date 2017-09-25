@@ -65,7 +65,7 @@
             android:clickable="true" />
         <Spinner
             android:id="@+id/spinner_push_fixed"
-            android:layout_width="50dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"

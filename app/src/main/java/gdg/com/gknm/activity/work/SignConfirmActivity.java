@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -23,6 +24,7 @@ import org.apache.http.Header;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -109,7 +111,7 @@ public class SignConfirmActivity extends BaseActivity {
     private String checkUnit = "";
     private String checkPerson = "";
     private String isZG = "0";
-    private String taskAssignment = "";
+    private String moveStatus = "0";
     private boolean isLeader = false;
     private List<SaveCurrentBean> saveCurrentBeanList;
 
@@ -124,15 +126,15 @@ public class SignConfirmActivity extends BaseActivity {
     }
 
     private void initData() {
-        if(SharedPreferenceUtil.getObject(USERINFO_OBJECT,this)!=null){
-            UserBean user = (UserBean)SharedPreferenceUtil.getObject(USERINFO_OBJECT,this);
+        if (SharedPreferenceUtil.getObject(USERINFO_OBJECT, this) != null) {
+            UserBean user = (UserBean) SharedPreferenceUtil.getObject(USERINFO_OBJECT, this);
             checkUnit = user.getResultEntity().getAreaName();
-            LogUtil.d(TAG, "checkUnit=="+checkUnit);
-            if(TextUtils.equals(user.getResultEntity().getAreaCode(),"RYLB_JK")){
+            LogUtil.d(TAG, "checkUnit==" + checkUnit);
+            if (TextUtils.equals(user.getResultEntity().getAreaCode(), "RYLB_JK")) {
                 isLeader = true;
             }
-        }else{
-            LogUtil.d(TAG, "UserBean=="+null);
+        } else {
+            LogUtil.d(TAG, "UserBean==" + null);
         }
         ;
         //初始化sp
@@ -254,7 +256,7 @@ public class SignConfirmActivity extends BaseActivity {
             checkPerson = getIntent().getStringExtra("checkPerson");
             LogUtil.d(TAG, "checkPerson==初始化成功");
             LogUtil.d(TAG, "checkPerson==" + checkPerson);
-        }else{
+        } else {
             LogUtil.d(TAG, "checkPerson==初始化失败");
         }
 //        if (getIntent().getStringExtra("checkUnit") != null) {
@@ -357,7 +359,7 @@ public class SignConfirmActivity extends BaseActivity {
                 if (isContentRight() == 0) {
                     if (isLeader) {
                         showDialog();
-                    }else{
+                    } else {
                         sendTaskInfo();
                     }
                 } else if (isContentRight() == 1) {
@@ -391,10 +393,12 @@ public class SignConfirmActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 PopWindow.dismiss();
+                moveStatus = "1";
                 sendTaskInfo();
             }
         });
     }
+
     private void showDialog2() {
         final SignLeader2PopWindow PopWindow = new SignLeader2PopWindow(SignConfirmActivity.this);
         PopWindow.showPopupWindow(mActionBar);
@@ -417,6 +421,7 @@ public class SignConfirmActivity extends BaseActivity {
             }
         });
     }
+
     private void getCheckTime() {
         Calendar d = Calendar.getInstance(Locale.CHINA);
         Date myDate = new Date();
@@ -540,7 +545,7 @@ public class SignConfirmActivity extends BaseActivity {
      */
     private void sendTaskInfo() {
         mProgressDialog.show();
-        mSubscription = RetorfitManager.getInstance().createReq(ApiService.class).saveTaskProcess(checkUnit, checkTime, isZG, WaterOrGas, enterpriseType, taskProgressId, industryType)
+        mSubscription = RetorfitManager.getInstance().createReq(ApiService.class).saveTaskProcess(checkUnit, checkTime, isZG,moveStatus, WaterOrGas, enterpriseType, taskProgressId, industryType)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new BaseObserver<UpLoadBean>(this) {
@@ -632,8 +637,11 @@ public class SignConfirmActivity extends BaseActivity {
      */
     private void upLoadFile(File file, String des, String waterOrGas) {
         mProgressDialog.show();
+        if(file==null){
+            file = creatNewFile();
+        }
         AsyncHttpClient client = new AsyncHttpClient();
-
+       // client.addHeader("ContentType", "multipart/form-data");
         RequestParams params = new RequestParams();
         try {
             params.put("file", file);
@@ -643,9 +651,27 @@ public class SignConfirmActivity extends BaseActivity {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        String requestURL = AppConfig.API_BASE_URL+"/edds/phoneHandleController/uploadQuestionFile.do?";
+        String requestURL = AppConfig.API_BASE_URL + "/edds/phoneHandleController/uploadQuestionFile.do?";
         Log.d(TAG, requestURL);
+
         client.post(requestURL, params, asyncHttpResponseHandlerFile);
+    }
+
+    private File creatNewFile() {
+        String filePath = Environment.getExternalStorageDirectory()+"/SignFile/";
+        File f1 = new File(filePath);
+        if (!f1.exists()) {
+            f1.mkdir();
+        }
+        String file_path = f1.getAbsolutePath()+"/nullFile.txt";
+        File f = new File(file_path);
+        try {
+
+            f.createNewFile();
+        } catch (IOException e) {
+            System.out.println("新建空文件时出错：" + e.toString());
+        }
+        return f;
     }
 
     /**
@@ -665,7 +691,7 @@ public class SignConfirmActivity extends BaseActivity {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        String requestURL =  AppConfig.API_BASE_URL+"/edds/phoneHandleController/uploadSignatureFile.do?";
+        String requestURL = AppConfig.API_BASE_URL + "/edds/phoneHandleController/uploadSignatureFile.do?";
         //String requestURL = "http://192.168.3.148:8080/edds/archiveController/saveArchiveMonitor.do?";
         Log.d(TAG, requestURL);
         client.post(requestURL, params, asyncHttpResponseHandlerSign);
@@ -739,7 +765,7 @@ public class SignConfirmActivity extends BaseActivity {
         public void onSuccess(int statusCode, Header[] headers,
                               byte[] responseBody) {
             // 上传成功后要做的工作
-           // ToastUtils.showShortToast(SignConfirmActivity.this, "上传成功");
+            // ToastUtils.showShortToast(SignConfirmActivity.this, "上传成功");
             signCont++;
             if (3 == signCont) {
                 Log.d(TAG, "签字上传" + signCont + "次");

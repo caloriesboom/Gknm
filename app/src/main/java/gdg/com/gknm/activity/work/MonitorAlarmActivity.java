@@ -1,5 +1,6 @@
 package gdg.com.gknm.activity.work;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +24,7 @@ import gdg.com.gknm.bean.MonitorAlarmBean;
 import gdg.com.gknm.network.RetorfitManager;
 import gdg.com.gknm.utils.LogUtil;
 import gdg.com.gknm.utils.ToastUtils;
+import gdg.com.gknm.utils.UIUtil;
 import gdg.com.gknm.weight.CustomActionBar;
 import gdg.com.gknm.weight.SearchMonitor;
 import rx.android.schedulers.AndroidSchedulers;
@@ -34,6 +36,7 @@ public class MonitorAlarmActivity extends BaseActivity {
     @Bind(R.id.list_view)
     SHListView listView;
     @Bind(R.id.refresh_layout)
+    private ProgressDialog mProgressDialog;
     SHSwipeRefreshLayout swipeRefreshLayout;
     private String TAG = "MonitorAlarmActivity";
     private MonitorAlarmAdapter taskAdapter;
@@ -59,6 +62,7 @@ public class MonitorAlarmActivity extends BaseActivity {
     }
 
     private void initView() {
+        mProgressDialog = UIUtil.initDialog(this, "正在登陆...");
     }
 
     private void initActionBar() {
@@ -95,7 +99,7 @@ public class MonitorAlarmActivity extends BaseActivity {
 
 
     private void initData() {
-
+        mProgressDialog.show();
         sendQuest(true);
 
     }
@@ -115,18 +119,21 @@ public class MonitorAlarmActivity extends BaseActivity {
 
                         taskAdapter = new MonitorAlarmAdapter(MonitorAlarmActivity.this, mList, R.layout.item_monitor_list_adapter);
                         listView.setAdapter(taskAdapter);
+                        listView.setSelection(mList.size()-1);
                         if (isRefresh) {
                             swipeRefreshLayout.finishRefresh();
                         } else {
                             swipeRefreshLayout.finishLoadmore();
                             Toast.makeText(MonitorAlarmActivity.this, "加载完成", Toast.LENGTH_SHORT).show();
                         }
+                        UIUtil.cancleDialog(mProgressDialog);
                     }
 
                     @Override
                     protected void onFailed(String msg) {
                         super.onFailed(msg);
                         LogUtil.d(TAG, msg);
+                        UIUtil.cancleDialog(mProgressDialog);
                     }
                 });
     }
